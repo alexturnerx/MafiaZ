@@ -1,0 +1,304 @@
+.mafia-container {
+  width: min(960px, 92%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mafia-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mafia-title {
+  margin: 0;
+  font-size: 2.25rem;
+  color: #111827;
+}
+
+.mafia-subtitle {
+  margin: 4px 0 0;
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+.mafia-warning {
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: rgba(234, 179, 8, 0.12);
+  border: 1px solid rgba(202, 138, 4, 0.25);
+  color: #92400e;
+}
+
+.mafia-alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.mafia-alert-info {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: #1d4ed8;
+}
+
+.mafia-alert-error {
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #b91c1c;
+}
+
+.mafia-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px 28px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.section-title {
+  margin: 0 0 18px;
+  font-size: 1.35rem;
+  color: #111827;
+}
+
+.control-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  align-items: end;
+}
+
+.control-row button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.control-row button:disabled {
+  background: #cbd5f5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.control-row button:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.25);
+}
+
+.game-id-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.game-id-input-group label {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.game-id-input-group input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-id-input-group input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+}
+
+.game-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.game-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  padding: 12px;
+  background: rgba(99, 102, 241, 0.06);
+  border-radius: 12px;
+  color: #1f2937;
+}
+
+.player-list {
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  padding-top: 16px;
+}
+
+.player-list-title {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  color: #111827;
+}
+
+.player-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.player-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.03);
+}
+
+.player-slot {
+  font-weight: 600;
+  color: #6366f1;
+  margin-right: 8px;
+}
+
+.player-address {
+  font-family: 'SFMono-Regular', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  color: #1f2937;
+}
+
+.player-status {
+  font-weight: 600;
+  min-width: 64px;
+  text-align: right;
+}
+
+.player-status.alive {
+  color: #047857;
+}
+
+.player-status.dead {
+  color: #b91c1c;
+}
+
+.badge {
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.15);
+  color: #4338ca;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.attack-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.attack-button:disabled {
+  background: #f1a8a8;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.attack-button:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(239, 68, 68, 0.25);
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.label {
+  margin: 0 0 6px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.value {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #111827;
+  word-break: break-word;
+}
+
+.value-mono {
+  font-family: 'SFMono-Regular', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.mafia-card button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #14b8a6, #0ea5e9);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mafia-card button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.mafia-card button:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(20, 184, 166, 0.25);
+}
+
+.placeholder-text {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 720px) {
+  .mafia-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .control-row {
+    grid-template-columns: 1fr;
+  }
+
+  .player-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .player-status {
+    text-align: left;
+  }
+}
