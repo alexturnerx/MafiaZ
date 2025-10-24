@@ -46,7 +46,7 @@ export function MafiaGameApp() {
   const [isBusy, setIsBusy] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
 
-  const contractUnavailable = useMemo(() => MAFIA_GAME_ADDRESS === ZERO_ADDRESS, []);
+  const contractUnavailable = useMemo(() => true, []);
 
   const parseGameId = (value: string) => {
     if (!value) return null;
