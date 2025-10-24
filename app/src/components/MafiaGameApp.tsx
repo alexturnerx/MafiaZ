@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount, usePublicClient } from 'wagmi';
 import { Contract } from 'ethers';
@@ -45,8 +45,6 @@ export function MafiaGameApp() {
   const [statusMessage, setStatusMessage] = useState<string>('');
   const [isBusy, setIsBusy] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
-
-  const contractUnavailable = useMemo(() => true, []);
 
   const parseGameId = (value: string) => {
     if (!value) return null;
@@ -128,10 +126,6 @@ export function MafiaGameApp() {
   );
 
   const handleCreateGame = async () => {
-    if (contractUnavailable) {
-      setError('Please set the deployed contract address first.');
-      return;
-    }
     if (!publicClient) {
       setError('Public client unavailable');
       return;
@@ -342,12 +336,6 @@ export function MafiaGameApp() {
         <ConnectButton label="Connect"/>
       </header>
 
-      {contractUnavailable && (
-        <div className="mafia-warning">
-          Configure `MAFIA_GAME_ADDRESS` with your deployed contract to enable interactions.
-        </div>
-      )}
-
       {!!error && <div className="mafia-alert mafia-alert-error">{error}</div>}
       {!!statusMessage && <div className="mafia-alert mafia-alert-info">{statusMessage}</div>}
       {zamaError && <div className="mafia-alert mafia-alert-error">{zamaError}</div>}
@@ -356,7 +344,7 @@ export function MafiaGameApp() {
       <section className="mafia-card">
         <h2 className="section-title">Game Controls</h2>
         <div className="control-row">
-          <button onClick={handleCreateGame} disabled={isBusy || contractUnavailable || !address}>
+          <button onClick={handleCreateGame} disabled={isBusy || !address}>
             Create New Game
           </button>
           <div className="game-id-input-group">
